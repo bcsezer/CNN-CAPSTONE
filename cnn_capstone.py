@@ -50,7 +50,7 @@ test_datagen = ImageDataGenerator(rescale = 1./255,
                                    zoom_range = 0.2,
                                    horizontal_flip= True)
 
-training_set = train_datagen.flow_from_directory('content/CNN-CAPSTONE/training_set.zip',
+training_set = train_datagen.flow_from_directory('/content/CNN-CAPSTONE/training_set.zip',
                                                  target_size=(64,64),
                                                  batch_size= 1,
                                                  class_mode='binary')
