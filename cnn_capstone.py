@@ -50,15 +50,16 @@ test_datagen = ImageDataGenerator(rescale = 1./255,
                                    zoom_range = 0.2,
                                    horizontal_flip= True)
 
-training_set = train_datagen.flow_from_directory('/Users/cemsezeroglu/Desktop/CNN/CNN_KANSER_VERİLERİ/training_set',
+training_set = train_datagen.flow_from_directory('content/CNN-CAPSTONE/training_set.zip',
                                                  target_size=(64,64),
                                                  batch_size= 1,
                                                  class_mode='binary')
-test_set = test_datagen.flow_from_directory('/Users/cemsezeroglu/Desktop/CNN/CNN_KANSER_VERİLERİ/test_set',
+test_set = test_datagen.flow_from_directory('/content/CNN-CAPSTONE/test_set.zip',
                                             target_size=(64,64),
                                             batch_size=1,
                                             class_mode='binary')
-
+#/Users/cemsezeroglu/Desktop/CNN/CNN_KANSER_VERİLERİ/training_set
+#/Users/cemsezeroglu/Desktop/CNN/CNN_KANSER_VERİLERİ/test_set
 classifier.fit_generator(training_set,
                          samples_per_epoch = 800,
                          nb_epoch = 3,
